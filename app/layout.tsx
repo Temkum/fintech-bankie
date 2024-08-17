@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "Fintech Softie",
   description: "Fintech Softie is a modern banking platform for everyone.",
   icons: {
-    icon: "/icons/logo.svg",
+    icon: "/icons/logo-black.png",
   }
 };
 
