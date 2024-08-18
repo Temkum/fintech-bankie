@@ -39,3 +39,15 @@ declare type User = {
 declare interface MobileNavProps {
   user: User;
 }
+
+declare interface RightSidebarProps {
+  user: User;
+  transactions: Transaction[];
+  banks: Bank[] & Account[];
+}
+
+declare interface CreditCardProps {
+  account: Account;
+  userName: string;
+  showBalance?: boolean;
+}
