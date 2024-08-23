@@ -51,3 +51,16 @@ declare interface CreditCardProps {
   userName: string;
   showBalance?: boolean;
 }
+
+declare type SignUpParams = {
+  firstName?: string;
+  lastName?: string;
+  address?: string;
+  city?: string;
+  state?: string;
+  postalCode?: string;
+  dateOfBirth?: string;
+  ssn: string;
+  email: string;
+  password: string;
+};
