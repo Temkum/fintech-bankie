@@ -3,9 +3,9 @@ import React from 'react';
 
 const SignUp = () => {
   return (
-    <div>
-      <AuthForm type="sign-up" />
-    </div>
+    <section className="flex-center size-full max-sm:px-6">
+      <AuthForm type="signup" />
+    </section>
   );
 };
 
