@@ -24,6 +24,7 @@ import { useRouter } from 'next/navigation';
 import { signIn, signUp } from '@/lib/actions/user.actions';
 
 const AuthForm = ({ type }: { type?: string }) => {
+  // 'use server';
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const formSchema = authFormSchema(type);
