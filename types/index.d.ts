@@ -26,6 +26,7 @@ declare type User = {
   dwollaCustomerUrl: string;
   dwollaCustomerId: string;
   firstName: string;
+  name: string;
   lastName: string;
   name: string;
   address1: string;
@@ -68,4 +69,9 @@ declare type SignUpParams = {
 declare interface signInProps {
   email: string;
   password: string;
+}
+
+declare interface FooterProps {
+  user: User;
+  type?: 'mobile' | 'desktop';
 }

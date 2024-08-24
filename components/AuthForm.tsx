@@ -80,7 +80,7 @@ const AuthForm = ({ type }: { type?: string }) => {
         </Link>
 
         <div className="flex flex-col gap-1 md-gap-3">
-          <h1>
+          <h1 className="text-24 font-bold text-gray-700">
             {user ? 'Link Account' : type === 'sign-in' ? 'Sign In' : 'Sign Up'}
             <p className="text-16 font-normal text-gray-600">
               {user

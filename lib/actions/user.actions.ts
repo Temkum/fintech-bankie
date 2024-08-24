@@ -44,14 +44,23 @@ export const signUp = async (userData: SignUpParams) => {
   }
 };
 
-// ... your initialization functions
-
 export async function getLoggedInUser() {
   try {
     const { account } = await createSessionClient();
     const user = await account.get();
+
     return parseStringify(user);
   } catch (error) {
     return null;
+  }
+}
+
+export async function signOut() {
+  try {
+    const { account } = await createSessionClient();
+    cookies().delete('appwrite-session');
+    await account.deleteSession('current');
+  } catch (error) {
+    console.error('Error', error);
   }
 }
