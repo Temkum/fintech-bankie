@@ -16,7 +16,6 @@ import { addFundingSource, createDwollaCustomer } from './dwolla.actions';
 
 const {
   APPWRITE_DATABASE_ID: DATABASE_ID,
-  APPWRITE_PROJECT_ID: PROJECT_ID,
   APPWRITE_BANK_COLLECTION_ID: BANK_COLLECTION_ID,
   APPWRITE_USER_COLLECTION_ID: USER_COLLECTION_ID,
 } = process.env;
@@ -57,7 +56,7 @@ export const signUp = async ({ password, ...userData }: SignUpParams) => {
       type: 'personal',
     });
 
-    if (!dwollaCustomerUrl) throw new Error('Could not create dwolla customer');
+    if (!dwollaCustomerUrl) throw new Error('Could not create Dwolla customer');
 
     const dwollaCustomerId = extractCustomerIdFromUrl(dwollaCustomerUrl);
 
@@ -68,8 +67,8 @@ export const signUp = async ({ password, ...userData }: SignUpParams) => {
       {
         ...userData,
         userId: newUserAccount.$id,
-        dwollaCustomerUrl,
         dwollaCustomerId,
+        dwollaCustomerUrl,
       }
     );
 

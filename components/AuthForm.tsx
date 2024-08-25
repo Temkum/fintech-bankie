@@ -53,7 +53,7 @@ const AuthForm = ({ type }: { type: string }) => {
           lastName: data.lastName!,
           address: data.address!,
           city: data.city!,
-          state: data.state!,
+          region: data.region!,
           postalCode: data.postalCode!,
           dateOfBirth: data.dateOfBirth!,
           ssn: data.ssn!,
@@ -138,8 +138,8 @@ const AuthForm = ({ type }: { type: string }) => {
                     />
                     <CustomInput
                       control={form.control}
-                      name="state"
-                      label="State"
+                      name="region"
+                      label="Region"
                       placeholder="Ex. SW"
                     />
                   </div>
@@ -162,7 +162,7 @@ const AuthForm = ({ type }: { type: string }) => {
                       control={form.control}
                       name="ssn"
                       label="SSN"
-                      placeholder="Year, Month, Day"
+                      placeholder="Format: 123-45-6789"
                     />
                     <CustomInput
                       control={form.control}

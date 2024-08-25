@@ -26,12 +26,11 @@ declare type User = {
   dwollaCustomerUrl: string;
   dwollaCustomerId: string;
   firstName: string;
-  name: string;
   lastName: string;
   name: string;
   address: string;
   city: string;
-  state: string;
+  region: string;
   postalCode: string;
   dateOfBirth: string;
   ssn: string;
@@ -58,7 +57,7 @@ declare type SignUpParams = {
   lastName: string;
   address: string;
   city: string;
-  state: string;
+  region: string;
   postalCode: string;
   dateOfBirth: string;
   ssn: string;
@@ -99,7 +98,7 @@ declare type NewDwollaCustomerParams = {
   type: string;
   address: string;
   city: string;
-  state: string;
+  region: string;
   postalCode: string;
   dateOfBirth: string;
   ssn: string;

@@ -51,7 +51,7 @@ export const createOnDemandAuthorization = async () => {
   }
 };
 
-export const createDwollaCustomer = async (
+export const createDwollaCustomer1 = async (
   newCustomer: NewDwollaCustomerParams
 ) => {
   try {
@@ -60,6 +60,19 @@ export const createDwollaCustomer = async (
       .then((res) => res.headers.get('location'));
   } catch (err) {
     console.error('Creating a Dwolla Customer Failed: ', err);
+  }
+};
+
+export const createDwollaCustomer = async (
+  newCustomer: NewDwollaCustomerParams
+) => {
+  try {
+    const response = await dwollaClient.post('customers', newCustomer);
+    const locationHeader = response.headers.get('location');
+    return locationHeader;
+  } catch (err) {
+    console.error('Creating a Dwolla Customer Failed: ', err);
+    throw err; // Consider rethrowing the error if you want to handle it further up the call stack
   }
 };
 
