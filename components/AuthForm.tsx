@@ -22,8 +22,9 @@ import { authFormSchema } from '@/lib/utils';
 import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { signIn, signUp } from '@/lib/actions/user.actions';
+import PlaidLink from './PlaidLink';
 
-const AuthForm = ({ type }: { type?: string }) => {
+const AuthForm = ({ type }: { type: string }) => {
   // 'use server';
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -45,7 +46,21 @@ const AuthForm = ({ type }: { type?: string }) => {
     try {
       //TODO: register up with Appwrite and create plaid token
       if (type === 'signup') {
-        const newUser = await signUp(data);
+        const userData = {
+          email: data.email,
+          password: data.password,
+          firstName: data.firstName!,
+          lastName: data.lastName!,
+          address: data.address!,
+          city: data.city!,
+          state: data.state!,
+          postalCode: data.postalCode!,
+          dateOfBirth: data.dateOfBirth!,
+          ssn: data.ssn!,
+        };
+
+        const newUser = await signUp(userData);
+
         //  set new user
         setUser(newUser);
       }
@@ -91,7 +106,9 @@ const AuthForm = ({ type }: { type?: string }) => {
         </div>
       </header>
       {user ? (
-        <div className="flex flex-col gap-4">{/* TODO: plaidlink */}</div>
+        <div className="flex flex-col gap-4">
+          <PlaidLink user={user} variant="primary" />
+        </div>
       ) : (
         <>
           <Form {...form}>

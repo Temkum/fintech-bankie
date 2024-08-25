@@ -29,7 +29,7 @@ declare type User = {
   name: string;
   lastName: string;
   name: string;
-  address1: string;
+  address: string;
   city: string;
   state: string;
   postalCode: string;
@@ -54,13 +54,13 @@ declare interface CreditCardProps {
 }
 
 declare type SignUpParams = {
-  firstName?: string;
-  lastName?: string;
-  address?: string;
-  city?: string;
-  state?: string;
-  postalCode?: string;
-  dateOfBirth?: string;
+  firstName: string;
+  lastName: string;
+  address: string;
+  city: string;
+  state: string;
+  postalCode: string;
+  dateOfBirth: string;
   ssn: string;
   email: string;
   password: string;
@@ -74,4 +74,55 @@ declare interface signInProps {
 declare interface FooterProps {
   user: User;
   type?: 'mobile' | 'desktop';
+}
+
+declare interface PlaidLinkProps {
+  user: User;
+  variant?: 'primary' | 'ghost';
+}
+
+declare interface exchangePublicTokenProps {
+  publicToken: string;
+  user: User;
+}
+
+declare type AddFundingSourceParams = {
+  dwollaCustomerId: string;
+  processorToken: string;
+  bankName: string;
+};
+
+declare type NewDwollaCustomerParams = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  type: string;
+  address: string;
+  city: string;
+  state: string;
+  postalCode: string;
+  dateOfBirth: string;
+  ssn: string;
+};
+
+declare type TransferParams = {
+  sourceFundingSourceUrl: string;
+  destinationFundingSourceUrl: string;
+  amount: string;
+};
+
+declare interface CreateFundingSourceOptions {
+  customerId: string; // Dwolla Customer ID
+  fundingSourceName: string; // Dwolla Funding Source Name
+  plaidToken: string; // Plaid Account Processor Token
+  _links: object; // Dwolla On Demand Authorization Link
+}
+
+declare interface createBankAccountProps {
+  accessToken: string;
+  userId: string;
+  accountId: string;
+  bankId: string;
+  fundingSourceURL: string;
+  shareableId: string;
 }
