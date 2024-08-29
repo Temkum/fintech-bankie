@@ -28,7 +28,7 @@ declare type User = {
   firstName: string;
   lastName: string;
   name: string;
-  address: string;
+  address1: string;
   city: string;
   region: string;
   postalCode: string;
@@ -55,7 +55,7 @@ declare interface CreditCardProps {
 declare type SignUpParams = {
   firstName: string;
   lastName: string;
-  address: string;
+  address1: string;
   city: string;
   region: string;
   postalCode: string;
@@ -96,7 +96,7 @@ declare type NewDwollaCustomerParams = {
   lastName: string;
   email: string;
   type: string;
-  address: string;
+  address1: string;
   city: string;
   region: string;
   postalCode: string;
@@ -124,4 +124,70 @@ declare interface createBankAccountProps {
   bankId: string;
   fundingSourceURL: string;
   shareableId: string;
+}
+
+declare type Transaction = {
+  id: string;
+  $id: string;
+  name: string;
+  paymentChannel: string;
+  type: string;
+  accountId: string;
+  amount: number;
+  pending: boolean;
+  category: string;
+  date: string;
+  image: string;
+  type: string;
+  $createdAt: string;
+  channel: string;
+  senderBankId: string;
+  receiverBankId: string;
+};
+
+declare type Bank = {
+  $id: string;
+  accountId: string;
+  bankId: string;
+  accessToken: string;
+  fundingSourceUrl: string;
+  userId: string;
+  shareableId: string;
+};
+
+declare interface getAccountsProps {
+  userId: string;
+}
+
+declare interface getAccountProps {
+  appwriteItemId: string;
+}
+
+declare interface getInstitutionProps {
+  institutionId: string;
+}
+
+declare interface getTransactionsProps {
+  accessToken: string;
+}
+
+declare interface getBanksProps {
+  userId: string;
+}
+
+declare interface getBankProps {
+  documentId: string;
+}
+
+declare interface getBankByAccountIdProps {
+  accountId: string;
+}
+
+declare type SearchParamProps = {
+  params: { [key: string]: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+declare interface getUserInfoProps {
+  userId: string;
 }

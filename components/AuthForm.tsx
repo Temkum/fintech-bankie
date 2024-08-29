@@ -51,7 +51,7 @@ const AuthForm = ({ type }: { type: string }) => {
           password: data.password,
           firstName: data.firstName!,
           lastName: data.lastName!,
-          address: data.address!,
+          address1: data.address1!,
           city: data.city!,
           region: data.region!,
           postalCode: data.postalCode!,
@@ -132,7 +132,7 @@ const AuthForm = ({ type }: { type: string }) => {
                   <div className="flex gap-4">
                     <CustomInput
                       control={form.control}
-                      name="address"
+                      name="address1"
                       label="Address"
                       placeholder="Enter your specific address"
                     />
