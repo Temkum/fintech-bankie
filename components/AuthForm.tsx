@@ -45,18 +45,18 @@ const AuthForm = ({ type }: { type: string }) => {
     setIsLoading(true);
     try {
       //TODO: register up with Appwrite and create plaid token
-      if (type === 'signup') {
+      if (type === 'sign-up') {
         const userData = {
-          email: data.email,
-          password: data.password,
           firstName: data.firstName!,
           lastName: data.lastName!,
           address1: data.address1!,
           city: data.city!,
-          region: data.region!,
+          state: data.state!,
           postalCode: data.postalCode!,
           dateOfBirth: data.dateOfBirth!,
           ssn: data.ssn!,
+          email: data.email,
+          password: data.password,
         };
 
         const newUser = await signUp(userData);
@@ -113,7 +113,7 @@ const AuthForm = ({ type }: { type: string }) => {
         <>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-              {type === 'signup' && (
+              {type === 'sign-up' && (
                 <>
                   <div className="flex gap-4">
                     <CustomInput
@@ -138,8 +138,8 @@ const AuthForm = ({ type }: { type: string }) => {
                     />
                     <CustomInput
                       control={form.control}
-                      name="region"
-                      label="Region"
+                      name="state"
+                      label="State"
                       placeholder="Ex. SW"
                     />
                   </div>
@@ -209,7 +209,7 @@ const AuthForm = ({ type }: { type: string }) => {
                 : 'Already have an account?'}
             </p>
             <Link
-              href={type === 'sign-in' ? '/signup' : '/sign-in'}
+              href={type === 'sign-in' ? '/sign-up' : '/sign-in'}
               className="form-link"
             >
               {type === 'sign-in' ? 'Sign up' : 'Sign in'}

@@ -30,7 +30,7 @@ declare type User = {
   name: string;
   address1: string;
   city: string;
-  region: string;
+  state: string;
   postalCode: string;
   dateOfBirth: string;
   ssn: string;
@@ -57,7 +57,7 @@ declare type SignUpParams = {
   lastName: string;
   address1: string;
   city: string;
-  region: string;
+  state: string;
   postalCode: string;
   dateOfBirth: string;
   ssn: string;
@@ -98,7 +98,7 @@ declare type NewDwollaCustomerParams = {
   type: string;
   address1: string;
   city: string;
-  region: string;
+  state: string;
   postalCode: string;
   dateOfBirth: string;
   ssn: string;
@@ -190,4 +190,51 @@ declare type SearchParamProps = {
 
 declare interface getUserInfoProps {
   userId: string;
+}
+
+declare interface RecentTransactionsProps {
+  accounts: Account[];
+  transactions: Transaction[];
+  appwriteItemId: string;
+  page: number;
+}
+
+declare type Account = {
+  id: string;
+  availableBalance: number;
+  currentBalance: number;
+  officialName: string;
+  mask: string;
+  institutionId: string;
+  name: string;
+  type: string;
+  subtype: string;
+  appwriteItemId: string;
+  shareableId: string;
+};
+
+declare interface BankTabItemProps {
+  account: Account;
+  appwriteItemId?: string;
+}
+
+declare type AccountTypes =
+  | 'depository'
+  | 'credit'
+  | 'loan '
+  | 'investment'
+  | 'other';
+
+declare interface BankInfoProps {
+  account: Account;
+  appwriteItemId?: string;
+  type: 'full' | 'card';
+}
+
+declare interface TransactionTableProps {
+  transactions: Transaction[];
+}
+
+declare interface CategoryBadgeProps {
+  category: string;
 }
