@@ -267,3 +267,13 @@ declare interface PaginationProps {
   page: number;
   totalPages: number;
 }
+
+declare interface CategoryProps {
+  category: CategoryCount;
+}
+
+declare type CategoryCount = {
+  name: string;
+  count: number;
+  totalCount: number;
+};
