@@ -262,3 +262,8 @@ declare interface CreateTransactionProps {
 declare interface getTransactionsByBankIdProps {
   bankId: string;
 }
+
+declare interface PaginationProps {
+  page: number;
+  totalPages: number;
+}
