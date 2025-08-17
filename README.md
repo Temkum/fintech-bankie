@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Softech Banking Platform
+
+A modern, secure, and feature-rich banking application built with Next.js and modern web technologies. This platform provides users with a seamless banking experience, including account management, transaction tracking, and financial insights.
+
+## Features
+
+- **Secure Authentication**: Robust user authentication and session management
+- **Account Management**: View and manage multiple bank accounts in one place
+- **Transaction Tracking**: Real-time transaction history and categorization
+- **Financial Insights**: Interactive dashboards with spending analytics
+- **Bank Integration**: Connect external bank accounts via Plaid integration
+- **Mobile Responsive**: Fully responsive design for all device sizes
+
+## Tech Stack
+
+- **Frontend**:
+
+  - Next.js 14 - React framework for server-rendered applications
+  - React 18 - Modern UI library for building interactive interfaces
+  - TypeScript - Type-safe JavaScript for better developer experience
+  - Tailwind CSS - Utility-first CSS framework for rapid UI development
+  - Radix UI - Accessible, unstyled UI components
+  - Chart.js - Interactive data visualization
+
+- **Backend & Services**:
+
+  - Next.js API Routes - Serverless API endpoints
+  - Appwrite - Backend server for authentication and database
+  - Plaid - Bank account integration
+  - Dwolla - Payment processing
+  - Sentry - Error tracking and monitoring
+
+- **Development Tools**:
+  - ESLint - Code linting
+  - Prettier - Code formatting
+  - TypeScript - Static type checking
+
+## Why This Stack?
+
+### Next.js & React
+
+- **Performance**: Server-side rendering and static site generation for optimal load times
+- **SEO Friendly**: Better search engine visibility with server-rendered content
+- **Developer Experience**: Hot reloading, file-based routing, and excellent TypeScript support
+
+### TypeScript
+
+- **Type Safety**: Catches errors during development rather than at runtime
+- **Better IDE Support**: Improved autocompletion and code navigation
+- **Self-Documenting**: Makes the codebase more maintainable and easier to understand
+
+### Tailwind CSS
+
+- **Rapid Development**: Build custom designs without leaving your HTML
+- **Consistency**: Enforces a consistent design system
+- **Performance**: Purges unused CSS in production for optimal bundle size
+
+### Appwrite
+
+- **Backend as a Service**: Reduces backend development time
+- **Authentication**: Built-in user management and authentication
+- **Scalability**: Cloud-based solution that scales with your application
+
+### Plaid & Dwolla
+
+- **Bank Integration**: Secure and reliable connection to thousands of financial institutions
+- **Payment Processing**: Robust infrastructure for handling financial transactions
+- **Compliance**: Built with security and regulatory compliance in mind
 
 ## Getting Started
 
-First, run the development server:
+1. **Clone the repository**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+   ```bash
+   git clone https://git@github.com:Temkum/fintech-bankie.git
+   cd softech-banking
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. **Set up environment variables**
+   Create a `.env.local` file in the root directory and add the required environment variables.
 
-## Learn More
+4. **Run the development server**
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. **Open [http://localhost:3000](http://localhost:3000) in your browser**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Acknowledgments
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Built with ❤️ using Next.js and modern web technologies
+- Special thanks to all the open-source projects that made this possible

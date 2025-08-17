@@ -20,7 +20,7 @@ const Sidebar = ({ user }: SidebarProps) => {
         >
           <Image
             src="/icons/logo-black.png"
-            alt="logo"
+            alt="Bankie logo"
             width={40}
             height={40}
             className="size-[24px] max-xl:size-14"

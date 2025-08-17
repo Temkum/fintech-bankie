@@ -40,13 +40,13 @@ const BankCard = ({
             src={'/icons/mastercard.svg'}
             width={45}
             height={32}
-            alt="visa"
+            alt="mastercard"
             className="ml-5"
           />
           <Image
             className="absolute top-0 left-0"
             src={'/icons/lines.svg'}
-            width={360}
+            width={316}
             height={190}
             alt="visa"
           />

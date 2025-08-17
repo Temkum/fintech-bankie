@@ -6,13 +6,12 @@ import { countTransactionCategories } from '@/lib/utils';
 import Category from './Category';
 
 const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
-  console.log(user);
   const categories: CategoryCount[] = countTransactionCategories(transactions);
 
   return (
     <aside className="right-sidebar">
       <section className="flex flex-col pb-8">
-        <div className="profile-banner"></div>
+        <div className="profile-banner" />
         <div className="profile">
           <div className="profile-img">
             <span className="text-5xl font-bold text-blue-500">

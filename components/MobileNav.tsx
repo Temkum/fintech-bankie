@@ -45,6 +45,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
               Softech Bankie
             </h1>
           </Link>
+
           <div className="mobilenav-sheet">
             <SheetClose asChild>
               <nav className="flex h-full flex-col pt-16 text-white">
